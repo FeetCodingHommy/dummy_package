@@ -19,3 +19,7 @@ if __name__ == "__main__":
         from _setup_test_code import VENV_NAME
         print("로컬 쥬피터에 등록된 가상환경 커널을 영구 삭제합니다.")
         os.system(f'jupyter kernelspec uninstall {VENV_NAME}')
+        
+        # 설치 완료 후 ipykernel 및 관련 패키지를 가상환경에서 삭제합니다.
+        # *참고: six와 python-dateutil은 pandas dependency 내용과 겹치기 때문에 삭제하지 않습니다.
+        os.system('pip uninstall -r requirements_ipykernel.txt')

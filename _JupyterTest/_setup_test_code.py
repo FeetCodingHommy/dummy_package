@@ -48,7 +48,3 @@ if __name__ == "__main__":
 
         # 가상환경의 python.exe와 ipykernel 패키지를 이용하여 로컬 쥬피터에 커널을 등록합니다.
         os.system(f'python -m ipykernel install --user --name {VENV_NAME} --display-name "{VENV_PYTHON_KERNEL_DISPLAY_NAME}"')
-
-        # 설치 완료 후 ipykernel 및 관련 패키지를 가상환경에서 삭제합니다.
-        # *참고: six와 python-dateutil은 pandas dependency 내용과 겹치기 때문에 삭제하지 않습니다.
-        os.system('pip uninstall -r requirements_ipykernel.txt')
